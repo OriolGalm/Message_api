@@ -120,6 +120,7 @@ class UserController extends ResourceController
                         "exp" => $exp, // expire time in seconds
                         "data" => array(
                                     'id' => $userdata['id'],
+                                    'name' => $userdata['name'],
                                     'email' => $userdata['email'],
                                     'role' => 4,
                                 ),

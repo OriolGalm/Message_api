@@ -15,10 +15,10 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '38143a9afc50997d55e4815db8489d1c' => __DIR__ . '/..' . '/rector/rector/bootstrap.php',
     );
 
@@ -80,6 +80,7 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         ),
         'F' => 
         array (
+            'Fluent\\Cors\\' => 12,
             'Firebase\\JWT\\' => 13,
             'Faker\\' => 6,
         ),
@@ -105,8 +106,8 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -228,6 +229,10 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         array (
             0 => __DIR__ . '/..' . '/kint-php/kint/src',
         ),
+        'Fluent\\Cors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/agungsugiarto/codeigniter4-cors/src',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
@@ -276,6 +281,7 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         array (
             0 => __DIR__ . '/../..' . '/system',
             1 => __DIR__ . '/../..' . '/tests/system',
+            2 => __DIR__ . '/..' . '/codeigniter4/framework/system',
         ),
     );
 
@@ -1217,6 +1223,10 @@ class ComposerStaticInit2aff3880701f2f3df96f6561e9619a83
         'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
         'Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
         'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
+        'Fluent\\Cors\\Commands\\CorsCommand' => __DIR__ . '/..' . '/agungsugiarto/codeigniter4-cors/src/Commands/CorsCommand.php',
+        'Fluent\\Cors\\Config\\Cors' => __DIR__ . '/..' . '/agungsugiarto/codeigniter4-cors/src/Config/Cors.php',
+        'Fluent\\Cors\\Filters\\CorsFilter' => __DIR__ . '/..' . '/agungsugiarto/codeigniter4-cors/src/Filters/CorsFilter.php',
+        'Fluent\\Cors\\ServiceCors' => __DIR__ . '/..' . '/agungsugiarto/codeigniter4-cors/src/ServiceCors.php',
         'Kint\\CallFinder' => __DIR__ . '/..' . '/kint-php/kint/src/CallFinder.php',
         'Kint\\Kint' => __DIR__ . '/..' . '/kint-php/kint/src/Kint.php',
         'Kint\\Parser\\ArrayLimitPlugin' => __DIR__ . '/..' . '/kint-php/kint/src/Parser/ArrayLimitPlugin.php',

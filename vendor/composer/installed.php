@@ -10,6 +10,15 @@
         'dev' => true,
     ),
     'versions' => array(
+        'agungsugiarto/codeigniter4-cors' => array(
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '3eae9932e8d68330a5b45a41a6871cc61a97bee3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../agungsugiarto/codeigniter4-cors',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'codeigniter/coding-standard' => array(
             'pretty_version' => 'v1.4.0',
             'version' => '1.4.0.0',
@@ -25,6 +34,15 @@
             'reference' => NULL,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'codeigniter4/framework' => array(
+            'pretty_version' => 'v4.2.4',
+            'version' => '4.2.4.0',
+            'reference' => 'f91bc95493dcbdc398372e1366f09827656f2982',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../codeigniter4/framework',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
