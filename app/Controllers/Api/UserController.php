@@ -83,7 +83,7 @@ class UserController extends ResourceController
         $messages = [
             "email" => [
                 "required" => "Email required",
-                "valid_email" => "Email address is not in format"
+                "valid_email" => "Email not valid"
             ],
             "password" => [
                 "required" => "password is required"
@@ -95,7 +95,7 @@ class UserController extends ResourceController
             $response = [
                 'status' => 500,
                 'error' => true,
-                'message' => $this->validator->getErrors(),
+                'messages' => $this->validator->getErrors(),
                 'data' => []
             ];
             
@@ -140,7 +140,7 @@ class UserController extends ResourceController
                     $response = [
                         'status' => 500,
                         'error' => true,
-                        'messages' => 'Incorrect details',
+                        'messages' => 'Incorrect password',
                         'data' => []
                     ];
                 }
