@@ -86,7 +86,7 @@ class UserController extends ResourceController
                 "valid_email" => "Email not valid"
             ],
             "password" => [
-                "required" => "password is required"
+                "required" => "Password is required"
             ],
         ];
 
