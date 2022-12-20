@@ -164,7 +164,7 @@ class UserController extends ResourceController
 		} else {
 			$this->form_validation->set_rules('isbn', 'isbn', 'required');
 		} */
-        $rules = [
+        /* $rules = [
             "email" => "required|valid_email|min_length[6]",
             "password" => "required", 
             "name" => "required"
@@ -178,7 +178,7 @@ class UserController extends ResourceController
             ],
             "password" => [
                 "required" => "Password is required"
-            ],
+            ], 
             "name" => [
                 "required" => "Name is required"
             ],
@@ -192,7 +192,7 @@ class UserController extends ResourceController
 				'message' => $this->validator->getErrors(),
 				'data' => []
 			];
-		} else { 
+		} else {  */
 
 			$emp = new UserModel();
 
@@ -201,9 +201,9 @@ class UserController extends ResourceController
 				//Retrieving Raw Data (PUT, PATCH, DELETE)
 				$input = $this->request->getRawInput();	
 				$data['name'] = $this->request->getVar("name");
-				$data['email'] = $this->request->getVar("email");
-				$data['phone_no'] = $this->request->getVar("phone_no");
-				$data['password'] = $this->request->getVar("password");
+				$data['image'] = $this->request->getVar("image");
+				$data['message'] = $this->request->getVar("message");
+				
 
 				$emp->update($emp_id, $data);
 
@@ -222,7 +222,7 @@ class UserController extends ResourceController
 					'data' => []
 				];
 			}
-		}
+		//}
 
 		return $this->respond($response);
     }
@@ -287,4 +287,33 @@ class UserController extends ResourceController
 
 		return $this->respond($response);
     }
+
+    public function showUser($user_id)
+	{
+		$user = new UserModel();
+
+		$data = $user->find($user_id);
+        //$data = $model->where(['id' => $user_id])->first();
+
+		if (!empty($data)) {
+
+			$response = [
+				'status' => 200,
+				"error" => false,
+				'messages' => 'Single user data',
+				'data' => $data
+			];
+
+		} else {
+
+			$response = [
+				'status' => 500,
+				"error" => true,
+				'messages' => 'No user found',
+				'data' => []
+			];
+		}
+
+		return $this->respond($response);
+	}
 }
