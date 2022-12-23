@@ -45,6 +45,7 @@ $routes->group("api", ["namespace" => "App\Controllers\Api"] , function($routes)
     $routes->delete("delete/(:num)", "UserController::deleteUser/$1");
     $routes->put("update/(:num)", "UserController::updateUser/$1");
     $routes->get("show/(:num)", "UserController::showUser/$1");
+    $routes->post("image/(:num)", "UserController::imageUser/$1");
     
 });
 

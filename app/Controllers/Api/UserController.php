@@ -227,6 +227,55 @@ class UserController extends ResourceController
 		return $this->respond($response);
     }
 
+    public function imageUser($user_id)
+    {
+        helper(['array']);
+
+        $rules = [
+            "image" => "uploaded[image]|max_size[image, 1024]|is_image[image]"
+        ];
+
+        $messages = [
+            "image" => [
+                "max_size" => "This image cannot be larger than 1024 Mb",
+                "is_image" => "Not a valid image"
+                ]
+        ];
+
+        if (!$this->validate($rules, $messages)) {
+            
+            $response = [
+				'status' => 500,
+				'error' => true,
+				'message' => $this->validator->getErrors(),
+				'data' => []
+			];
+
+        }else{
+            $user = new UserModel();
+
+            $fileName = dot_array_search('image.name', $_FILES);
+
+            $data = [
+                'id' => $user_id
+            ];
+
+            if($fileName != ''){
+
+                $file = $this->request->getFile('image');
+                if(! $file->isValid())
+                    return $this->fail($file->getErrorString());
+
+                $file->move('./assets/upload');
+                $data['image'] = $file->getName();
+            }
+
+            $user->update($user_id, $data);
+            //$this->model->save($data);
+            return $this->respond($data);
+        }
+    }
+
     public function details()
     {
         $key = getenv('JWT_SECRET');
