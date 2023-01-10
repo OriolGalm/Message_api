@@ -8,6 +8,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Exception;
 use \App\Validation\CustomRules;
+use \CodeIgniter\Files\File;
 
 class UserController extends ResourceController
 {
@@ -237,8 +238,8 @@ class UserController extends ResourceController
 
         $messages = [
             "image" => [
-                "max_size" => "This image cannot be larger than 1024 Mb",
-                "is_image" => "Not a valid image"
+                "max_size" => "Image cannot be larger than 1024 Mb",
+                "ext_in" => "Not a valid image"
                 ]
         ];
 
@@ -275,6 +276,15 @@ class UserController extends ResourceController
             return $this->respond($data);
         }
     }
+
+    public function getImage($user_id)
+	{
+		$user = new UserModel();
+        
+        $fileName = $user->select('image')->where('id', $user_id)->first();
+        $data = base_url('assets/upload/$fileName'); 
+        return $data;
+	}
 
     public function details()
     {
